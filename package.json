@@ -4,6 +4,7 @@
   "description": "API base image for candidate technical assessments",
   "main": "index.js",
   "author": "Pablo Sierra (https://github.com/sierrapablo)",
+  "type": "module",
   "scripts": {
     "start": "node src/index.js"
   },

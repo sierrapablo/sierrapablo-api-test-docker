@@ -1,9 +1,7 @@
 import { Router } from "express";
-import testController from "../controllers/testController";
+import { getTest } from "../controllers/testController.js";
 
 const router = Router();
-
-const { getTest } = testController;
 
 router.get("/test", getTest);
 
