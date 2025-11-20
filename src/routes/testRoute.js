@@ -1,10 +1,8 @@
 import { Router } from "express";
-import testController from "../controllers/testController";
+import testController from "../controllers/testController.js";
 
 const router = Router();
 
-const { getTest } = testController;
-
-router.get("/test", getTest);
+router.get("/test", testController.getTest);
 
 export default router;
