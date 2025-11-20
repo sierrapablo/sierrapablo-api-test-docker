@@ -1,10 +1,10 @@
-const cors = require("cors");
+import cors from "cors";
 
-const express = require("express");
+import express from "express";
 const app = express();
 const port = 3000;
 
-const testRoute = require("./routes/testRoute");
+import testRoute from "./routes/testRoute";
 
 app.use(cors());
 app.use("/", testRoute);
