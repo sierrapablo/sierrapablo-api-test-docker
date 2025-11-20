@@ -1,0 +1,13 @@
+{
+  "name": "tech-test-resource-api",
+  "version": "1.0.0",
+  "description": "API base image for candidate technical assessments",
+  "main": "index.js",
+  "author": "Pablo Sierra (https://github.com/sierrapablo)",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
