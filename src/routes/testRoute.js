@@ -1,6 +1,8 @@
 import { Router } from "express";
-const router = Router();
 import testController from "../controllers/testController";
+
+const router = Router();
+
 const { getTest } = testController;
 
 router.get("/test", getTest);
