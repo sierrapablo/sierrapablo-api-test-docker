@@ -6,7 +6,7 @@ pipeline {
   }
 
   environment {
-    REGISTRY_REPO = 'sierrapablo/image-test'
+    REGISTRY_REPO = 'sierrapablo/api-test'
     DOCKER_HUB_CREDENTIALS_ID = 'docker-hub-credentials'
   }
 
