@@ -1,4 +1,3 @@
-import cors from "cors";
 import express from "express";
 import testRoute from "./routes/testRoute.js";
 import versionRoute from "./routes/versionRoute.js";
