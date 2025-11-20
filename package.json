@@ -1,6 +1,6 @@
 {
   "name": "tech-test-resource-api",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "API base image for candidate technical assessments",
   "main": "index.js",
   "author": "Pablo Sierra (https://github.com/sierrapablo)",
