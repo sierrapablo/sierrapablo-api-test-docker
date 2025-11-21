@@ -14,8 +14,10 @@ pipeline {
     stage('Build') {
       steps {
         script {
-          echo "Building image with tag: ${params.IMAGE_TAG}"
-          dockerTaggedImage = docker.build("${env.REGISTRY_REPO}:${params.IMAGE_TAG}")
+          if (params.IMAGE_TAG != 'latest') {
+            echo "Building image with tag: ${params.IMAGE_TAG}"
+            dockerTaggedImage = docker.build("${env.REGISTRY_REPO}:${params.IMAGE_TAG}")
+          }
           echo 'Building image with tag: latest'
           dockerLatestImage = docker.build("${env.REGISTRY_REPO}:latest")
         }
@@ -27,7 +29,9 @@ pipeline {
         script {
           echo 'Pushing image to Docker Hub...'
           docker.withRegistry('', DOCKER_HUB_CREDENTIALS_ID) {
-            dockerTaggedImage.push()
+            if (params.IMAGE_TAG != 'latest') {
+              dockerTaggedImage.push()
+            }
             dockerLatestImage.push()
           }
         }
