@@ -15,7 +15,9 @@ pipeline {
       steps {
         script {
           echo "Building image with tag: ${params.IMAGE_TAG}"
-          dockerImage = docker.build("${env.REGISTRY_REPO}:${params.IMAGE_TAG}")
+          dockerTaggedImage = docker.build("${env.REGISTRY_REPO}:${params.IMAGE_TAG}")
+          echo 'Building image with tag: latest'
+          dockerLatestImage = docker.build("${env.REGISTRY_REPO}:latest")
         }
       }
     }
@@ -25,7 +27,8 @@ pipeline {
         script {
           echo 'Pushing image to Docker Hub...'
           docker.withRegistry('', DOCKER_HUB_CREDENTIALS_ID) {
-            dockerImage.push()
+            dockerTaggedImage.push()
+            dockerLatestImage.push()
           }
         }
       }
